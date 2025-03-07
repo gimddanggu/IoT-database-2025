@@ -240,7 +240,7 @@ IoT 개발자 데이터베이스 저장소
         ```sql
         -- 삽입
         INSERT INTO 테이블명 [(컬럼리스트)]
-        VALUE (값리스트);
+        VALUE (값리스트);       -- VALUE는 SQL표준이 아님(MySQL, PostgreSQL 등 에서만 사용가능)
 
         -- 다른테이블의 데이터 가져오기
         INSERT INTO 테이블명 [(컬럼리스트)]
@@ -368,13 +368,17 @@ IoT 개발자 데이터베이스 저장소
 
 
 ## 7일차
+- Workbench TIP!
+    - SQL툴 공통으로 SELECT 실행 시 모든 행을 다 표시하지 않음.(성능저하 대비)
+    - Workbench는 1000개로 제한
+    - 성능 테스트 시 1000개 제한을 풀어줘야 함
+    - 메뉴 `Edit > Preferences > SQL Editor > SQL Execution > SELECT Query Results > Limit Row Count`를 조절
+    <img src='./image/db005.png' width='500'>
+
 - 인덱스 실습 : [SQL](./day07/db01_인덱스연습.sql)
     - 500 만건 조회시  price로 검색
         - 인덱스가 없으며 0.66초 소요
         - 인덱스를 걸면 0.08초 소요
-    - Workbench에서 출력행 개수 조절
-        - SQL Editor > SQL Execution > SELECT Query Results > Limit Row Count
-        <img src='./image/db005.png' width='500'>
 - 데이터베이스 관리와 보안 [SQL](./day07/db02_DB관리.sql)
 - 실무실습 : [SQL](./day07/db03_쿼리연습.sql)
     - 서브쿼리까지
