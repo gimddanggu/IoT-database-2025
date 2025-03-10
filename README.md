@@ -399,5 +399,26 @@ IoT 개발자 데이터베이스 저장소
     - SQL 연습
 
 ## 9일차
-- tkinter DB연동 GUI앱 개발
+- tkinter DB연동 GUI앱 개발 [Python](./day09/students_regapp.py)
+    1. MSQL madang 데이터베이스 사용하는 madang 사용자 생성, 권한
+    2. madang DB에 students 테이블 생성
+        ```SQL
+        drop table if exists students; -- 현재 테이블 삭제
+        create table students (
+            std_id integer primary key auto_increment,      -- auto_increment는  MYSQL 옵션.
+            std_name varchar(100) not null,
+            std_mobile varchar(20),
+            std_regyear int not null
+        );
+        -- 더미 데이터 추가
+        insert into students(std_name, std_mobile, std_regyear)
+             values ('홍길동', '010-9999-8888', 2020);
+        ```
+
+    3. tkinter 템플릿 코드 작성 - 기본적인 GUI앱 툴
+        <img src='./image/db007.png' width=700>
+    4. 데이터베이스 CRUD 함수 구현
+        <img src='./image/db008.png' width=700>
+- 데이터 베이스 연습
+    - SQL, 모델링 연습
 - 코딩테스트
